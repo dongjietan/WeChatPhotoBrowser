@@ -22,6 +22,9 @@
 /** 单击 */
 @property (nonatomic,copy) void (^ItemViewSingleTapBlock)();
 
+/** 长按 */
+@property (nonatomic,copy) void (^ItemViewLongTapBlock)();
+
 /** 当前的页标 */
 @property (nonatomic,assign) NSUInteger pageIndex;
 

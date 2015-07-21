@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoBroswerVC">
             <connections>
+                <outlet property="pageControl" destination="JzC-w2-hkq" id="tYj-0P-DL9"/>
                 <outlet property="scrollView" destination="RLq-hQ-X8E" id="Zjo-9h-zSA"/>
                 <outlet property="scrollViewRightMarginC" destination="Tvg-wG-r5c" id="OXi-IA-O76"/>
                 <outlet property="topBarHeightC" destination="z0u-B8-TAv" id="twn-SD-aHw"/>
@@ -27,10 +27,10 @@
                         <outlet property="delegate" destination="-1" id="0DS-ez-gbh"/>
                     </connections>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aju-yJ-YWP" userLabel="TopBarView">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aju-yJ-YWP" userLabel="TopBarView">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                     <subviews>
-                        <toolbar clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="j0X-oO-d7p">
+                        <toolbar hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="j0X-oO-d7p">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                             <items/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -89,13 +89,19 @@
                         <constraint firstAttribute="centerY" secondItem="d2q-sR-DMR" secondAttribute="centerY" constant="-10" id="qLQ-62-abe"/>
                     </constraints>
                 </view>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="JzC-w2-hkq">
+                    <rect key="frame" x="0.0" y="553" width="600" height="37"/>
+                </pageControl>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="aju-yJ-YWP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="04D-fi-2NY"/>
+                <constraint firstAttribute="bottom" secondItem="JzC-w2-hkq" secondAttribute="bottom" constant="10" id="903-g4-OJL"/>
                 <constraint firstAttribute="bottom" secondItem="RLq-hQ-X8E" secondAttribute="bottom" id="NXy-TB-ShD"/>
                 <constraint firstAttribute="trailing" secondItem="RLq-hQ-X8E" secondAttribute="trailing" id="Tvg-wG-r5c"/>
+                <constraint firstAttribute="trailing" secondItem="JzC-w2-hkq" secondAttribute="trailing" id="bq8-nr-U8l"/>
                 <constraint firstItem="RLq-hQ-X8E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="grk-ds-Vu1"/>
+                <constraint firstItem="JzC-w2-hkq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="h5l-1L-4hN"/>
                 <constraint firstAttribute="trailing" secondItem="aju-yJ-YWP" secondAttribute="trailing" id="mdb-vv-b3Q"/>
                 <constraint firstItem="RLq-hQ-X8E" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mr6-yK-Tcv"/>
                 <constraint firstItem="aju-yJ-YWP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="z0u-B8-TAv"/>

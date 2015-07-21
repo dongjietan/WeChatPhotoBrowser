@@ -75,6 +75,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSArray *images = [datas objectAtIndex:indexPath.row];
     
@@ -95,7 +96,7 @@
         NSMutableArray *modelsM = [NSMutableArray arrayWithCapacity:images.count];
         for (NSUInteger i = 0; i < images.count; i++) {
             PhotoModel *pbModel = [[PhotoModel alloc] init];
-            pbModel.mid = i + 1;
+            pbModel.mid = images[i];
             pbModel.image_HD_U = images[i];
             
             //源frame

@@ -14,7 +14,7 @@
 @interface PhotoModel : NSObject
 
 /** mid，保存图片缓存唯一标识，必须传 */
-@property (nonatomic,assign) NSUInteger mid;
+@property (nonatomic,strong) NSString *mid;
 
 
 

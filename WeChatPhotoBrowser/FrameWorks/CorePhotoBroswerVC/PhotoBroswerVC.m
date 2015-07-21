@@ -19,7 +19,7 @@
 
 
 
-@interface PhotoBroswerVC ()<UIScrollViewDelegate>
+@interface PhotoBroswerVC ()<UIScrollViewDelegate, UIActionSheetDelegate>
 
 
 /** 外部操作控制器 */
@@ -83,6 +83,8 @@
 /** 当前显示中的itemView */
 @property (nonatomic,weak) PhotoItemView *currentItemView;
 
+/** pageControl */
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @end
 
 @implementation PhotoBroswerVC
@@ -206,9 +208,11 @@
     [_handleVC addChildViewController:self];
     
     self.topBarView.alpha=0;
+    self.pageControl.alpha = 0;
     
     [UIView animateWithDuration:.25f animations:^{
         self.topBarView.alpha=1;
+        self.pageControl.alpha = 1;
     } completion:^(BOOL finished) {
         photoModel.sourceImageView.hidden = NO;
     }];
@@ -256,6 +260,16 @@
     
     //去除自动处理
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    if (self.photoModels.count <= 1) {
+        self.pageControl.hidden = YES;
+    }
+    else{
+        self.pageControl.hidden = NO;
+        //pageControl
+        self.pageControl.numberOfPages = self.photoModels.count;
+        self.pageControl.currentPage = self.index;
+    }
     
     //每页准备
     [self pagesPrepare];
@@ -308,6 +322,10 @@
         [self singleTap];
     };
     
+    photoItemView.ItemViewLongTapBlock = ^(){
+        [self longTap];
+    };
+    
     //到这里，photoItemView一定有值，而且一定显示为当前页
     //加入到当前显示中的字典
     [self.visiblePhotoItemViewDictM setObject:photoItemView forKey:@(page)];
@@ -341,33 +359,37 @@
 
 -(void)singleTap{
     
-    CGFloat h = _topBarView.frame.size.height;
-    
-    BOOL show = _topBarView.tag == 0;
-    
-    _topBarView.tag = show?1:0;
-    
-    _topBarHeightC.constant = show?-h:0;
-    
-    [UIView animateWithDuration:.25f animations:^{
-        
-        [_topBarView setNeedsLayout];
-        [_topBarView layoutIfNeeded];
-    }];
-    
-    [self.scrollView.subviews enumerateObjectsUsingBlock:^(UIView *subView, NSUInteger idx, BOOL *stop) {
-        
-        if([subView isKindOfClass:[PhotoItemView class]]){
-            
-            PhotoItemView *itemView = (PhotoItemView *)subView;
-            
-            [itemView handleBotoomView];
-        }
-    }];
+//    CGFloat h = _topBarView.frame.size.height;
+//    
+//    BOOL show = _topBarView.tag == 0;
+//    
+//    _topBarView.tag = show?1:0;
+//    
+//    _topBarHeightC.constant = show?-h:0;
+//    
+//    [UIView animateWithDuration:.25f animations:^{
+//        
+//        [_topBarView setNeedsLayout];
+//        [_topBarView layoutIfNeeded];
+//    }];
+//    
+//    [self.scrollView.subviews enumerateObjectsUsingBlock:^(UIView *subView, NSUInteger idx, BOOL *stop) {
+//        
+//        if([subView isKindOfClass:[PhotoItemView class]]){
+//            
+//            PhotoItemView *itemView = (PhotoItemView *)subView;
+//            
+//            [itemView handleBotoomView];
+//        }
+//    }];
+    [self dismiss];
 }
 
 
-
+-(void)longTap{
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"保存图片", nil];
+    [sheet showInView:self.view];
+}
 
 /*
  *  scrollView代理方法区
@@ -499,6 +521,8 @@
         //获取当前显示中的photoItemView
         self.currentItemView = [self.visiblePhotoItemViewDictM objectForKey:@(self.page)];
     });
+    
+    self.pageControl.currentPage = page;
 }
 
 
@@ -669,6 +693,7 @@
     
     [UIView animateWithDuration:.4f animations:^{
         self.topBarView.alpha=0;
+        self.pageControl.alpha = 0;
     }];
     
     
@@ -722,5 +747,12 @@
     [self removeFromParentViewController];
 }
 
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 0){
+        [self rightBtnClick:nil];
+    }
+}
 
 @end

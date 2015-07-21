@@ -49,6 +49,9 @@
 /** imageView的双击 */
 @property (nonatomic,strong) UITapGestureRecognizer *tap_double_imageViewGesture;
 
+/** imageView的长按 */
+@property (nonatomic,strong) UILongPressGestureRecognizer *tap_long_imageViewGesture;
+
 /** 旋转手势 */
 @property (nonatomic,strong) UIRotationGestureRecognizer *rotaGesture;
 
@@ -82,6 +85,7 @@
     [self addGestureRecognizer:self.tap_single_viewGesture];
     [self addGestureRecognizer:self.tap_double_viewGesture];
     [self addGestureRecognizer:self.tap_double_imageViewGesture];
+    [self addGestureRecognizer:self.tap_long_imageViewGesture];
 }
 
 -(void)setPhotoModel:(PhotoModel *)photoModel{
@@ -154,7 +158,7 @@
             }];
         });
         
-        [UIView animateWithDuration:timeInterval delay:0 usingSpringWithDamping:.52f initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:timeInterval delay:0 usingSpringWithDamping:1.0f initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
             self.photoImageView.frame = self.photoImageView.calF;
             
@@ -245,6 +249,15 @@
 }
 
 
+/*
+ *  imageView长按
+ */
+-(void)tap_long_imageViewTap:(UITapGestureRecognizer *)tap{
+    if (tap.state == UIGestureRecognizerStateBegan) {
+        if(_ItemViewLongTapBlock != nil) _ItemViewLongTapBlock();
+    }
+}
+
 
 /*
  *  旋转手势
@@ -328,6 +341,7 @@
         _tap_single_viewGesture =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap_single_viewTap:)];
         [_tap_single_viewGesture requireGestureRecognizerToFail:self.tap_double_imageViewGesture];
         [_tap_single_viewGesture requireGestureRecognizerToFail:self.tap_double_viewGesture];
+        [_tap_single_viewGesture requireGestureRecognizerToFail:self.tap_long_imageViewGesture];
     }
     
     return _tap_single_viewGesture;
@@ -369,7 +383,20 @@
     return _tap_double_imageViewGesture;
 }
 
-
+/*
+ *  imageView长按
+ */
+-(UILongPressGestureRecognizer *)tap_long_imageViewGesture{
+    
+    if(_tap_long_imageViewGesture == nil){
+        
+        _tap_long_imageViewGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(tap_long_imageViewTap:)];
+        [_tap_long_imageViewGesture requireGestureRecognizerToFail:self.tap_double_imageViewGesture];
+        [_tap_long_imageViewGesture requireGestureRecognizerToFail:self.tap_double_viewGesture];
+    }
+    
+    return _tap_long_imageViewGesture;
+}
 
 /*
  *  保存图片及回调
@@ -434,7 +461,7 @@
     }];
     
     
-    [UIView animateWithDuration:.5f delay:0 usingSpringWithDamping:.6f initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:.5f delay:0 usingSpringWithDamping:1.0f initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.photoImageView.contentMode = self.photoModel.sourceImageView.contentMode;
         self.photoImageView.frame = self.photoModel.sourceFrame;
         self.photoImageView.clipsToBounds = YES;
