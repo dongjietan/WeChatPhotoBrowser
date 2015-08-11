@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69AB44671B6E20FD007CAF28 /* TopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB44661B6E20FD007CAF28 /* TopCell.m */; };
+		69AB446A1B6E2110007CAF28 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB44691B6E2110007CAF28 /* FriendCell.m */; };
+		69AB446E1B6E244D007CAF28 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB446C1B6E244D007CAF28 /* avatar.png */; };
+		69AB446F1B6E244D007CAF28 /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69AB446D1B6E244D007CAF28 /* cat.jpg */; };
+		69AB44711B6E2A5F007CAF28 /* avatar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB44701B6E2A5F007CAF28 /* avatar1.png */; };
+		69AB44731B6E38E9007CAF28 /* avatar2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69AB44721B6E38E9007CAF28 /* avatar2.jpg */; };
+		69DC36731B79FABF00E3967E /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DC36721B79FABF00E3967E /* default.png */; };
 		69EE69B01B5E0775008B0473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EE69AF1B5E0775008B0473 /* main.m */; };
 		69EE69B31B5E0775008B0473 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EE69B21B5E0775008B0473 /* AppDelegate.m */; };
 		69EE69B61B5E0775008B0473 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EE69B51B5E0775008B0473 /* ViewController.m */; };
@@ -74,7 +81,6 @@
 		69EE6AA41B5E0883008B0473 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 69EE6A651B5E0883008B0473 /* SVProgressHUD.bundle */; };
 		69EE6AA51B5E0883008B0473 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EE6A671B5E0883008B0473 /* SVProgressHUD.m */; };
 		69EE6AA61B5E0883008B0473 /* LFRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EE6A6A1B5E0883008B0473 /* LFRoundProgressView.m */; };
-		69EE6AAD1B5E129E008B0473 /* JDPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EE6AAC1B5E129E008B0473 /* JDPhotoGroup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +94,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69AB44651B6E20FD007CAF28 /* TopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopCell.h; sourceTree = "<group>"; };
+		69AB44661B6E20FD007CAF28 /* TopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopCell.m; sourceTree = "<group>"; };
+		69AB44681B6E2110007CAF28 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
+		69AB44691B6E2110007CAF28 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
+		69AB446C1B6E244D007CAF28 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		69AB446D1B6E244D007CAF28 /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
+		69AB44701B6E2A5F007CAF28 /* avatar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar1.png; sourceTree = "<group>"; };
+		69AB44721B6E38E9007CAF28 /* avatar2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar2.jpg; sourceTree = "<group>"; };
+		69DC36721B79FABF00E3967E /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		69EE69AA1B5E0775008B0473 /* WeChatPhotoBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatPhotoBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69EE69AE1B5E0775008B0473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69EE69AF1B5E0775008B0473 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -219,8 +234,6 @@
 		69EE6A671B5E0883008B0473 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		69EE6A691B5E0883008B0473 /* LFRoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFRoundProgressView.h; sourceTree = "<group>"; };
 		69EE6A6A1B5E0883008B0473 /* LFRoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFRoundProgressView.m; sourceTree = "<group>"; };
-		69EE6AAB1B5E129E008B0473 /* JDPhotoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDPhotoGroup.h; sourceTree = "<group>"; };
-		69EE6AAC1B5E129E008B0473 /* JDPhotoGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDPhotoGroup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +254,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69AB44631B6E20E8007CAF28 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				69AB44641B6E20E8007CAF28 /* UITableViewCell */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		69AB44641B6E20E8007CAF28 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				69AB44651B6E20FD007CAF28 /* TopCell.h */,
+				69AB44661B6E20FD007CAF28 /* TopCell.m */,
+				69AB44681B6E2110007CAF28 /* FriendCell.h */,
+				69AB44691B6E2110007CAF28 /* FriendCell.m */,
+			);
+			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		69AB446B1B6E244D007CAF28 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				69DC36721B79FABF00E3967E /* default.png */,
+				69AB446C1B6E244D007CAF28 /* avatar.png */,
+				69AB446D1B6E244D007CAF28 /* cat.jpg */,
+				69AB44701B6E2A5F007CAF28 /* avatar1.png */,
+				69AB44721B6E38E9007CAF28 /* avatar2.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		69EE69A11B5E0775008B0473 = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +307,7 @@
 		69EE69AC1B5E0775008B0473 /* WeChatPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				69EE6AAA1B5E11E7008B0473 /* WeChatPhotoBrowser */,
+				69AB44631B6E20E8007CAF28 /* UIView */,
 				69EE69B11B5E0775008B0473 /* AppDelegate.h */,
 				69EE69B21B5E0775008B0473 /* AppDelegate.m */,
 				69EE69B41B5E0775008B0473 /* ViewController.h */,
@@ -271,6 +315,7 @@
 				69EE69B71B5E0775008B0473 /* Main.storyboard */,
 				69EE69BA1B5E0775008B0473 /* Images.xcassets */,
 				69EE69BC1B5E0775008B0473 /* LaunchScreen.xib */,
+				69AB446B1B6E244D007CAF28 /* Images */,
 				69EE69AD1B5E0775008B0473 /* Supporting Files */,
 			);
 			path = WeChatPhotoBrowser;
@@ -691,15 +736,6 @@
 			path = LFRoundProgressView;
 			sourceTree = "<group>";
 		};
-		69EE6AAA1B5E11E7008B0473 /* WeChatPhotoBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				69EE6AAB1B5E129E008B0473 /* JDPhotoGroup.h */,
-				69EE6AAC1B5E129E008B0473 /* JDPhotoGroup.m */,
-			);
-			path = WeChatPhotoBrowser;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -780,12 +816,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69AB44731B6E38E9007CAF28 /* avatar2.jpg in Resources */,
 				69EE6AA11B5E0883008B0473 /* CoreSVP.bundle in Resources */,
+				69AB446F1B6E244D007CAF28 /* cat.jpg in Resources */,
+				69AB44711B6E2A5F007CAF28 /* avatar1.png in Resources */,
 				69EE6AA41B5E0883008B0473 /* SVProgressHUD.bundle in Resources */,
 				69EE6A8A1B5E0883008B0473 /* PhotoItemView.xib in Resources */,
 				69EE69B91B5E0775008B0473 /* Main.storyboard in Resources */,
 				69EE69BE1B5E0775008B0473 /* LaunchScreen.xib in Resources */,
 				69EE69BB1B5E0775008B0473 /* Images.xcassets in Resources */,
+				69DC36731B79FABF00E3967E /* default.png in Resources */,
+				69AB446E1B6E244D007CAF28 /* avatar.png in Resources */,
 				69EE6A8E1B5E0883008B0473 /* CoreSDWebImage.bundle in Resources */,
 				69EE6A8C1B5E0883008B0473 /* PhotoBroswerVC.xib in Resources */,
 				69EE6A831B5E0883008B0473 /* PB.bundle in Resources */,
@@ -818,7 +859,6 @@
 				69EE6A6E1B5E0883008B0473 /* CALayer+Transition.m in Sources */,
 				69EE6A961B5E0883008B0473 /* SDWebImageManager.m in Sources */,
 				69EE6A771B5E0883008B0473 /* UIImage+Color.m in Sources */,
-				69EE6AAD1B5E129E008B0473 /* JDPhotoGroup.m in Sources */,
 				69EE6A9F1B5E0883008B0473 /* UIButton+SD.m in Sources */,
 				69EE6A701B5E0883008B0473 /* NSDate+Extend.m in Sources */,
 				69EE6A841B5E0883008B0473 /* PBBlurImageView.m in Sources */,
@@ -833,6 +873,7 @@
 				69EE6A9B1B5E0883008B0473 /* UIImage+WebP.m in Sources */,
 				69EE6A791B5E0883008B0473 /* UIImage+Extend.m in Sources */,
 				69EE6A951B5E0883008B0473 /* SDWebImageDownloaderOperation.m in Sources */,
+				69AB446A1B6E2110007CAF28 /* FriendCell.m in Sources */,
 				69EE6A711B5E0883008B0473 /* NSObject+Extend.m in Sources */,
 				69EE6A8F1B5E0883008B0473 /* MKAnnotationView+WebCache.m in Sources */,
 				69EE6A7A1B5E0883008B0473 /* UIImage+FixOrientation.m in Sources */,
@@ -847,6 +888,7 @@
 				69EE6A9D1B5E0883008B0473 /* UIImageView+WebCache.m in Sources */,
 				69EE6A871B5E0883008B0473 /* PBScrollView.m in Sources */,
 				69EE6A9E1B5E0883008B0473 /* UIView+WebCacheOperation.m in Sources */,
+				69AB44671B6E20FD007CAF28 /* TopCell.m in Sources */,
 				69EE6A7F1B5E0883008B0473 /* UIView+PBExtend.m in Sources */,
 				69EE6A7B1B5E0883008B0473 /* UIImage+Water.m in Sources */,
 				69EE6A8B1B5E0883008B0473 /* PhotoBroswerVC.m in Sources */,
@@ -994,6 +1036,7 @@
 				INFOPLIST_FILE = WeChatPhotoBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1004,6 +1047,7 @@
 				INFOPLIST_FILE = WeChatPhotoBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1060,6 +1104,7 @@
 				69EE69CF1B5E0775008B0473 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69EE69D01B5E0775008B0473 /* Build configuration list for PBXNativeTarget "WeChatPhotoBrowserTests" */ = {
 			isa = XCConfigurationList;
@@ -1068,6 +1113,7 @@
 				69EE69D21B5E0775008B0473 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

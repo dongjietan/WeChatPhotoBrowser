@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "JDPhotoGroup.h"
+#import "PhotoBroswerVC.h"
+#import "FriendCell.h"
 
-@interface ViewController ()<JDPhotoGroupDelegate>{
+@interface ViewController (){
     NSArray *datas;
 }
 
@@ -64,26 +65,33 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *images = [datas objectAtIndex:indexPath.row];
-    return images.count / 4 * 100;
+    if (indexPath.row == 0) {
+        return 370;
+    }
+    else{
+        NSArray *images = [datas objectAtIndex:indexPath.row];
+        FriendCell *friendCell = (FriendCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+        friendCell.photoItemArray = images;
+        return [friendCell height];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    static NSString *topCellID = @"TopCell";
+    static NSString *friendCellID = @"FriendCell";
+    
+    UITableViewCell *cell;
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:topCellID];
+    }
+    else{
+        cell = [tableView dequeueReusableCellWithIdentifier:friendCellID];
+        FriendCell *friendCell = (FriendCell *)cell;
+        NSArray *images = [datas objectAtIndex:indexPath.row];
+        friendCell.photoItemArray = images;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    NSArray *images = [datas objectAtIndex:indexPath.row];
-    
-    JDPhotoGroup *photoGroup = [[JDPhotoGroup alloc] init];
-    photoGroup.indexPath = indexPath;
-    photoGroup.delegate = self;
-    photoGroup.photoItemArray = images;
-    [cell addSubview:photoGroup];
     
     return cell;
 }
