@@ -96,7 +96,7 @@
     NSUInteger imageCount = self.photoItemArray.count;
     int totalRowCount = ((CGFloat)imageCount - 1) / SDPhotoGroupEachLineImageCount + 1;
     CGFloat width = [self imageWidth];
-    CGFloat height = 100 + totalRowCount * width + (totalRowCount - 1) * SDPhotoGroupImageSpace;
+    CGFloat height = 80 + totalRowCount * width + (totalRowCount - 1) * SDPhotoGroupImageSpace;
     return height;
 }
 

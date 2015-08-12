@@ -74,10 +74,18 @@
                                                         <constraint firstAttribute="height" constant="1" id="zGj-vQ-SvC"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1小时前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZv-zj-zwb">
+                                                    <rect key="frame" x="60" y="84.5" width="43" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="omO-q2-gsY" secondAttribute="bottom" id="9oY-38-DuL"/>
+                                                <constraint firstItem="MZv-zj-zwb" firstAttribute="leading" secondItem="xf5-9Q-hN6" secondAttribute="leading" constant="60" id="SKd-Ul-v2a"/>
                                                 <constraint firstItem="omO-q2-gsY" firstAttribute="leading" secondItem="xf5-9Q-hN6" secondAttribute="leading" id="b2d-8B-I14"/>
+                                                <constraint firstItem="omO-q2-gsY" firstAttribute="top" secondItem="MZv-zj-zwb" secondAttribute="bottom" constant="15" id="f5r-AZ-spA"/>
                                                 <constraint firstAttribute="trailing" secondItem="omO-q2-gsY" secondAttribute="trailing" id="oLL-9g-F1C"/>
                                             </constraints>
                                         </tableViewCellContentView>
